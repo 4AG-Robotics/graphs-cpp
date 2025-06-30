@@ -34,14 +34,14 @@ private:
 };
 
 // compare by weight
-bool operator<(const DirectedEdge& lhs, const DirectedEdge& rhs) {
+inline bool operator<(const DirectedEdge& lhs, const DirectedEdge& rhs) {
     return lhs.weight() < rhs.weight();
 }
-bool operator>(const DirectedEdge& lhs, const DirectedEdge& rhs) {
+inline bool operator>(const DirectedEdge& lhs, const DirectedEdge& rhs) {
     return lhs.weight() > rhs.weight();
 }
 
-std::ostream& operator<<(std::ostream& os, const DirectedEdge& e) {
+inline std::ostream& operator<<(std::ostream& os, const DirectedEdge& e) {
     return os << e.from() << "->"<< e.to()<<" "<<e.weight();
 }
 

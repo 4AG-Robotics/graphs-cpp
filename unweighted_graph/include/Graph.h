@@ -235,7 +235,7 @@ namespace graph {
                 }
             }
 
-            bool operator==(const PathsFromVertexResult& rhs) const {
+            inline bool operator==(const PathsFromVertexResult& rhs) const {
                 if(this == &rhs) return true;
                 // compare sizes
                 if(start != rhs.start || distTo.size() != rhs.distTo.size() || edgeTo.size() != rhs.edgeTo.size()) {
@@ -248,7 +248,7 @@ namespace graph {
                 return true;
             }
 
-            bool operator!=(const PathsFromVertexResult& rhs) const {
+            inline bool operator!=(const PathsFromVertexResult& rhs) const {
                 return !(*this == rhs);
             }
 

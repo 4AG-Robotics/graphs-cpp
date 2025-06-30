@@ -32,7 +32,7 @@ public:
     virtual ~FlowNetwork() = default;
 };
 
-std::ostream& operator<<(std::ostream &os, const FlowNetwork& graph) {
+inline std::ostream& operator<<(std::ostream &os, const FlowNetwork& graph) {
     os<<"FlowNetwork (V="<<graph.V()<<", E="<<graph.E()<<")\n";
     for(int i=0; i<graph.V(); ++i) {
         os<<"Vertex "<<i<<": ";

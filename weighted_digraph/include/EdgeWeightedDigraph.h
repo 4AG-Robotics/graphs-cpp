@@ -31,7 +31,7 @@ public:
     virtual ~EdgeWeightedDigraph() = default;
 };
 
-std::ostream& operator<<(std::ostream &os, const EdgeWeightedDigraph& graph) {
+inline std::ostream& operator<<(std::ostream &os, const EdgeWeightedDigraph& graph) {
     os<<"EdgeWeightedDigraph (V="<<graph.V()<<", E="<<graph.E()<<")\n";
     for(int i=0; i<graph.V(); ++i) {
         os<<"Vertex "<<i<<": ";

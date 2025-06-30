@@ -40,10 +40,10 @@ private:
 };
 
 // compare by weight
-bool operator<(const Edge& lhs, const Edge& rhs) {
+inline bool operator<(const Edge& lhs, const Edge& rhs) {
     return lhs.getWeight() < rhs.getWeight();
 }
-bool operator>(const Edge& lhs, const Edge& rhs) {
+inline bool operator>(const Edge& lhs, const Edge& rhs) {
     return lhs.getWeight() > rhs.getWeight();
 }
 
@@ -51,7 +51,7 @@ bool operator>(const Edge& lhs, const Edge& rhs) {
 namespace std {
     template<>
     struct hash<Edge> {
-        size_t operator()(const Edge& e) const {
+        inline size_t operator()(const Edge& e) const {
             // make sure that order of vertices does not matter
             auto v1 = e.either();
             auto v2 = e.other(v1);
@@ -67,7 +67,7 @@ namespace std {
     };
 }
 
-std::ostream& operator<<(std::ostream& os, const Edge& e) {
+inline std::ostream& operator<<(std::ostream& os, const Edge& e) {
     int v1 = e.either();
     int v2 = e.other(v1);
     return os << "Edge (" << v1 << ")--"<<e.getWeight()<<"--("<<v2<<")";
